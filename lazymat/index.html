@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lazymat</title>
+
+<!-- ================================================================= -->
+<!--  ★転送先はここ1か所だけ。将来の切り替えはこの1行を書き換える。     -->
+<!--  今はLINE友だち追加URL。有事にはLPや別ページのURLに差し替えるだけ。 -->
+<!-- ================================================================= -->
+<script>
+  var DEST = "https://lin.ee/XXXXXXXX";   /* ← LINE友だち追加URLに差し替える */
+</script>
+
+<!-- JSが無効な端末向けの保険（DESTと同じURLに手で合わせる） -->
+<noscript>
+  <meta http-equiv="refresh" content="0; url=https://lin.ee/XXXXXXXX">
+</noscript>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background: #f4f1ea;
+    color: #2c2a26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 28px 32px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  }
+  .brand {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .lead {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6b665e;
+    margin-bottom: 28px;
+  }
+  .spinner {
+    width: 34px;
+    height: 34px;
+    margin: 0 auto 22px;
+    border: 3px solid #e6e1d6;
+    border-top-color: #06c755; /* LINEグリーン */
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 15px 16px;
+    background: #06c755;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+  .note {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #9a948a;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">Lazymat</div>
+    <p class="lead">説明書・保証・プレゼントのご案内は<br>LINEでお届けしています。</p>
+    <div class="spinner" aria-hidden="true"></div>
+    <a id="line-btn" class="btn" href="#">LINEで友だち追加する</a>
+    <p class="note">自動で切り替わらない場合は、上のボタンを押してください。</p>
+  </div>
+
+  <script>
+    // ボタンにも同じ転送先を設定
+    document.getElementById("line-btn").setAttribute("href", DEST);
+    // 自動転送（履歴に残さない replace を使用）
+    window.location.replace(DEST);
+  </script>
+</body>
+</html>
